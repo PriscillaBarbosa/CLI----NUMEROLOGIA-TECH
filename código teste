@@ -1,0 +1,236 @@
+código teste para listar sessão (nova tela):
+
+<?php
+session_start();
+include 'header.php'; 
+?>
+
+<main>
+    <div class="container">
+        <h1 class="titulo">Lista de Associados</h1>
+        <?php
+        if (isset($_SESSION['associados']) && !empty($_SESSION['associados'])) {
+            echo "<table class='associados-table'>";
+            echo "<tr>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Aniversário</th>
+                    <th>Telefone</th>
+                    <th>Bairro</th>
+                    <th>CEP</th>
+                    <th>Cidade</th>
+                    <th>Estado</th>
+                    <th>Email</th>
+                    <th>Instagram</th>
+                    <th>Facebook</th>
+                  </tr>";
+            foreach ($_SESSION['associados'] as $associado) {
+                echo "<tr>";
+                echo "<td>" . htmlspecialchars($associado['nome']) . "</td>";
+                echo "<td>" . htmlspecialchars($associado['cpf']) . "</td>";
+                echo "<td>" . htmlspecialchars($associado['aniversario']) . "</td>";
+                echo "<td>" . htmlspecialchars($associado['telefone']) . "</td>";
+                echo "<td>" . htmlspecialchars($associado['bairro']) . "</td>";
+                echo "<td>" . htmlspecialchars($associado['cep']) . "</td>";
+                echo "<td>" . htmlspecialchars($associado['cidade']) . "</td>";
+                echo "<td>" . htmlspecialchars($associado['estado']) . "</td>";
+                echo "<td>" . htmlspecialchars($associado['email']) . "</td>";
+                echo "<td>" . htmlspecialchars($associado['instagram']) . "</td>";
+                echo "<td>" . htmlspecialchars($associado['facebook']) . "</td>";
+                echo "</tr>";
+            }
+            echo "</table>";
+        } else {
+            echo "<p>Nenhum associado cadastrado.</p>";
+        }
+        ?>
+    </div>
+</main>
+
+<?php
+include 'footer.php'; 
+?>
+
+
+código atualizado para listar a sessão: 
+
+<?php
+session_start();
+include 'caminho/para/header.php';
+?>
+
+<main>
+    <div class="container">
+        <h1 class="titulo">Lista de Associados</h1>
+        <?php
+        if (isset($_SESSION['associados']) && !empty($_SESSION['associados'])) {
+            echo "<table class='associados-table'>";
+            echo "<tr>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Aniversário</th>
+                    <th>Telefone</th>
+                    <th>Bairro</th>
+                    <th>CEP</th>
+                    <th>Cidade</th>
+                    <th>Estado</th>
+                    <th>Email</th>
+                    <th>Instagram</th>
+                    <th>Facebook</th>
+                    <th>Ação</th>
+                  </tr>";
+            foreach ($_SESSION['associados'] as $index => $associado) {
+                echo "<tr>";
+                echo "<td>" . htmlspecialchars($associado['nome']) . "</td>";
+                echo "<td>" . htmlspecialchars($associado['cpf']) . "</td>";
+                echo "<td>" . htmlspecialchars($associado['aniversario']) . "</td>";
+                echo "<td>" . htmlspecialchars($associado['telefone']) . "</td>";
+                echo "<td>" . htmlspecialchars($associado['bairro']) . "</td>";
+                echo "<td>" . htmlspecialchars($associado['cep']) . "</td>";
+                echo "<td>" . htmlspecialchars($associado['cidade']) . "</td>";
+                echo "<td>" . htmlspecialchars($associado['estado']) . "</td>";
+                echo "<td>" . htmlspecialchars($associado['email']) . "</td>";
+                echo "<td>" . htmlspecialchars($associado['instagram']) . "</td>";
+                echo "<td>" . htmlspecialchars($associado['facebook']) . "</td>";
+                echo "<td><a href='editar_associado.php?index=$index'>Editar</a></td>";
+                echo "</tr>";
+            }
+            echo "</table>";
+        } else {
+            echo "<p>Nenhum associado cadastrado.</p>";
+        }
+        ?>
+    </div>
+</main>
+
+<?php
+include 'caminho/para/footer.php';
+?>
+
+
+adicionando botão de edição: 
+
+<?php
+session_start();
+include 'caminho/para/header.php'; 
+?>
+
+<main>
+    <div class="container">
+        <h1 class="titulo">Lista de Associados</h1>
+        <?php
+        if (isset($_SESSION['associados']) && !empty($_SESSION['associados'])) {
+            echo "<table class='associados-table'>";
+            echo "<tr>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Aniversário</th>
+                    <th>Telefone</th>
+                    <th>Bairro</th>
+                    <th>CEP</th>
+                    <th>Cidade</th>
+                    <th>Estado</th>
+                    <th>Email</th>
+                    <th>Instagram</th>
+                    <th>Facebook</th>
+                    <th>Ação</th>
+                  </tr>";
+            foreach ($_SESSION['associados'] as $index => $associado) {
+                echo "<tr>";
+                echo "<td>" . htmlspecialchars($associado['nome']) . "</td>";
+                echo "<td>" . htmlspecialchars($associado['cpf']) . "</td>";
+                echo "<td>" . htmlspecialchars($associado['aniversario']) . "</td>";
+                echo "<td>" . htmlspecialchars($associado['telefone']) . "</td>";
+                echo "<td>" . htmlspecialchars($associado['bairro']) . "</td>";
+                echo "<td>" . htmlspecialchars($associado['cep']) . "</td>";
+                echo "<td>" . htmlspecialchars($associado['cidade']) . "</td>";
+                echo "<td>" . htmlspecialchars($associado['estado']) . "</td>";
+                echo "<td>" . htmlspecialchars($associado['email']) . "</td>";
+                echo "<td>" . htmlspecialchars($associado['instagram']) . "</td>";
+                echo "<td>" . htmlspecialchars($associado['facebook']) . "</td>";
+                echo "<td><a href='editar_associado.php?index=$index'>Editar</a></td>";
+                echo "</tr>";
+            }
+            echo "</table>";
+        } else {
+            echo "<p>Nenhum associado cadastrado.</p>";
+        }
+        ?>
+    </div>
+</main>
+
+<?php
+include 'caminho/para/footer.php'; 
+?>
+
+
+página para editar o associado: 
+
+<?php
+session_start();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $index = $_POST['index'];
+    $_SESSION['associados'][$index] = [
+        "nome" => htmlspecialchars($_POST['nome']),
+        "cpf" => htmlspecialchars($_POST['cpf']),
+        "aniversario" => htmlspecialchars($_POST['data_aniversario']),
+        "telefone" => htmlspecialchars($_POST['telefone']),
+        "bairro" => htmlspecialchars($_POST['bairro']),
+        "cep" => htmlspecialchars($_POST['cep']),
+        "cidade" => htmlspecialchars($_POST['cidade']),
+        "estado" => htmlspecialchars($_POST['estado']),
+        "email" => htmlspecialchars($_POST['email']),
+        "instagram" => htmlspecialchars($_POST['instagram']),
+        "facebook" => htmlspecialchars($_POST['facebook'])
+    ];
+    header("Location: listar_sessao.php");
+    exit;
+}
+
+if (isset($_GET['index'])) {
+    $index = $_GET['index'];
+    $associado = $_SESSION['associados'][$index];
+} else {
+    header("Location: listar_sessao.php");
+    exit;
+}
+
+include 'caminho/para/header.php'; 
+?>
+
+<main>
+    <div class="container">
+        <h1 class="titulo">Editar Associado</h1>
+        <form action="editar_associado.php" method="post">
+            <input type="hidden" name="index" value="<?php echo $index; ?>">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" value="<?php echo htmlspecialchars($associado['nome']); ?>" required>
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf" name="cpf" value="<?php echo htmlspecialchars($associado['cpf']); ?>" required>
+            <label for="data_aniversario">Aniversário:</label>
+            <input type="date" id="data_aniversario" name="data_aniversario" value="<?php echo htmlspecialchars($associado['aniversario']); ?>" required>
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" value="<?php echo htmlspecialchars($associado['telefone']); ?>" required>
+            <label for="bairro">Bairro:</label>
+            <input type="text" id="bairro" name="bairro" value="<?php echo htmlspecialchars($associado['bairro']); ?>" required>
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" name="cep" value="<?php echo htmlspecialchars($associado['cep']); ?>" required>
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" name="cidade" value="<?php echo htmlspecialchars($associado['cidade']); ?>" required>
+            <label for="estado">Estado:</label>
+            <input type="text" id="estado" name="estado" value="<?php echo htmlspecialchars($associado['estado']); ?>" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($associado['email']); ?>" required>
+            <label for="instagram">Instagram:</label>
+            <input type="url" id="instagram" name="instagram" value="<?php echo htmlspecialchars($associado['instagram']); ?>">
+            <label for="facebook">Facebook:</label>
+            <input type="url" id="facebook" name="facebook" value="<?php echo htmlspecialchars($associado['facebook']); ?>">
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+</main>
+
+<?php
+include 'caminho/para/footer.php'; 
+?>
