@@ -1,0 +1,119 @@
+/* ==========================================================================
+   Estilos Globais e Sobrescrita do Bootstrap
+   ========================================================================== */
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-text-main);
+    background-color: var(--color-bg-light);
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, .display-4, .display-1 {
+    font-family: var(--font-heading);
+    color: var(--color-bg-dark);
+}
+
+/* ==========================================================================
+   Cabeçalho (Hero Section)
+   ========================================================================== */
+header {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%) !important;
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+header .lead {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+}
+
+/* ==========================================================================
+   Cartão do Formulário
+   ========================================================================== */
+.card {
+    border-radius: var(--border-radius-lg) !important;
+    box-shadow: var(--shadow-soft) !important;
+    border: none !important;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); 
+}
+
+/* ==========================================================================
+   Campos de Formulário (Inputs)
+   ========================================================================== */
+.form-control {
+    border-radius: var(--border-radius-sm);
+    border: 1px solid #cbd5e1;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+}
+
+.form-control:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.25);
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--color-text-main);
+    margin-bottom: 0.5rem;
+}
+
+/* ==========================================================================
+   Botões
+   ========================================================================== */
+.btn-primary {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    border-radius: var(--border-radius-sm);
+    padding: 0.75rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+.btn-success {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #fff;
+    font-weight: 600;
+}
+
+.btn-success:hover {
+    background-color: #d97706; 
+    border-color: #d97706;
+}
+
+/* ==========================================================================
+   Área de Resultado
+   ========================================================================== */
+#numeroResultado {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 4px 10px rgba(99, 102, 241, 0.1);
+}
+
+footer a {
+    color: var(--color-primary);
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+footer a:hover {
+    color: var(--color-secondary);
+}
