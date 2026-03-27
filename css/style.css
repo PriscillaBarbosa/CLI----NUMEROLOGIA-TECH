@@ -32,7 +32,8 @@ header .lead {
 }
 
 .parallax-container {
-    background-image: url('/assets/img/img-header.jpg');
+    background-image: url('/assets/img/img-header.webp');
+    background-color: #1a0b2e;
     min-height: 500px;
     background-attachment: fixed;
     background-position: center;
