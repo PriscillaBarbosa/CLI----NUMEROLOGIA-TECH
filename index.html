@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Calculadora numerológica integrada com automação inteligente.">
+    <meta name="description" content="Calculadora numerológica">
     <meta name="author" content="Priscilla Barbosa">
     
     <title>Numerologia Tech | Análise Vibracional</title>
@@ -13,66 +13,56 @@
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-light">
+<body>
+    <main class="container-fluid parallax-container">
+        <section class="header py-5 text-center text-white">
+            <div class="container p-5">
+                <h1 class="display-4 fw-bold">Descubra sua Frequência</h1>
+                <p class="lead">Análise numerológica para orientação de carreira.</p>
+            </div>
+        </section>
+        <section class="body parallax-content">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body p-4 p-md-5">
+                            <form id="formNumerologia" onsubmit="event.preventDefault();">
+                                <div class="mb-3">
+                                    <label for="nomeBatismo" class="form-label">Nome de Batismo (Completo)</label>
+                                    <input type="text" class="form-control" id="nomeBatismo" placeholder="Ex: Maria da Silva" required>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label for="dataNascimento" class="form-label">Data de Nascimento</label>
+                                    <input type="date" class="form-control" id="dataNascimento" required>
+                                </div>
 
-    <header class="py-5 text-center bg-dark text-white">
-        <div class="container">
-            <h1 class="display-4 fw-bold">Descubra sua Frequência</h1>
-            <p class="lead">Análise numerológica pitagórica para orientação de carreira.</p>
-        </div>
-    </header>
+                                <button type="submit" class="btn btn-primary w-100 py-2 fw-bold" id="btnCalcular">
+                                    Calcular Destino
+                                </button>
+                            </form>
 
-    <main class="container my-5">
-        <div class="row justify-content-center">
-            <div class="col-md-8 col-lg-6">
-                <div class="card shadow-sm border-0">
-                    <div class="card-body p-4 p-md-5">
-                        <h2 class="h4 mb-4 text-center">Inicie sua Análise Gratuita</h2>
-                        
-                        <form id="formNumerologia" onsubmit="event.preventDefault();">
-                            <div class="mb-3">
-                                <label for="nomeBatismo" class="form-label">Nome de Batismo (Completo)</label>
-                                <input type="text" class="form-control" id="nomeBatismo" placeholder="Ex: Maria da Silva" required>
+                            <div id="areaResultado" class="mt-4 text-center d-none">
+                                <hr>
+                                <h3 class="h5 mt-4">Seu Número de Expressão é:</h3>
+                                <div class="display-1 fw-bold text-primary my-3" id="numeroResultado">-</div>
+                                <p class="text-muted" id="textoResultado">Aguardando análise...</p>
                             </div>
-                            
-                            <div class="mb-4">
-                                <label for="dataNascimento" class="form-label">Data de Nascimento</label>
-                                <input type="date" class="form-control" id="dataNascimento" required>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary w-100 py-2 fw-bold" id="btnCalcular">
-                                Calcular Destino
-                            </button>
-                        </form>
-
-                        <div id="areaResultado" class="mt-4 text-center d-none">
-                            <hr>
-                            <h3 class="h5 mt-4">Seu Número de Expressão é:</h3>
-                            <div class="display-1 fw-bold text-primary my-3" id="numeroResultado">-</div>
-                            <p class="text-muted" id="textoResultado">Aguardando análise...</p>
-                            
-                            <button id="btnReceberWhatsApp" class="btn btn-success mt-3 d-none">
-                                Receber Análise Completa no WhatsApp
-                            </button>
                         </div>
-
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+        <section class="footer py-4 mt-auto text-center">
+            <div class="container p-3">
+                <small>
+                    Desenvolvido por <a href="https://priscillabarbosa.com.br" target="_blank" class="text-decoration-none">Priscilla Barbosa</a> | Desenvolvimento Web & Experiência Digital
+                </small>
+            </div>
+        </section>
     </main>
 
-    <footer class="py-4 mt-auto text-center text-muted">
-        <div class="container">
-            <small>
-                Desenvolvido por <a href="https://priscillabarbosa.com.br" target="_blank" class="text-decoration-none">Priscilla B. Oliveira</a> | Desenvolvimento Web & Experiência Digital
-            </small>
-        </div>
-    </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
     <script src="js/main.js"></script>
-
 </body>
 </html>

@@ -36,14 +36,13 @@ formulario.addEventListener('submit', async function(event) {
     const numeroMagico = calcularNumeroExpresso(nome);
     numeroResultado.innerText = numeroMagico;
 
-    btnCalcular.innerText = "Consultando os astros (IA processando)...";
+    btnCalcular.innerText = "Realizando os cálculos (IA processando)...";
     btnCalcular.disabled = true;
     areaResultado.classList.remove('d-none');
     textoResultado.innerHTML = "<em>Aguarde alguns segundos enquanto a inteligência artificial analisa a sua frequência...</em>";
 
     try {
-        // 3. Envia os dados para o seu Backend (PHP)
-        const resposta = await fetch('api/gerar_analise.php', {
+        const resposta = await fetch('api/gerar_analise', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ nome: nome, data: dataNascimento })
@@ -51,7 +50,6 @@ formulario.addEventListener('submit', async function(event) {
 
         const dados = await resposta.json();
 
-        // 4. Exibe o resultado da IA
         if (dados.sucesso) {
             textoResultado.innerHTML = dados.analise;
         } else {

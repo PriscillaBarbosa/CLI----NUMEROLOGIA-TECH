@@ -2,13 +2,14 @@
 
 :root {
     /* 1. Paleta de Cores Principais */
-    --color-primary: #6366f1;    
-    --color-secondary: #8b5cf6;  
+    --color-primary: #c1c1cd;    
+    --color-secondary: #685499;  
+    --color-terciary: #8678ac;  
     --color-accent: #f59e0b;     
     
     /* 2. Cores Neutras (Fundos e Textos) */
-    --color-bg-light: #f8fafc;   
-    --color-bg-dark: #0f172a;    
+    --color-bg-light: #bec5c5;   
+    --color-bg-dark: #0f172a98;    
     --color-text-main: #334155;  
     --color-text-muted: #64748b; 
 
