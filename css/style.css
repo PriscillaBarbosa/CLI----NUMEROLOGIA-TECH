@@ -135,4 +135,8 @@ footer a:hover {
 .container {
     color:#ffffff;
     background-color: var( --color-bg-dark);
+    border-radius: var(--border-radius-lg) !important;
+    box-shadow: var(--shadow-soft) !important;
+    border: none !important;
+    transition: transform 0.3s ease;
 }
